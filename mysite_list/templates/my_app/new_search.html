@@ -4,46 +4,21 @@
 
     <h3 style="text-align: center">{{ search | title }}</h3>
     <div class="row">
+    {% for post in final_postings %}
         <div class="col s4">
             <div class="card small">
                 <div class="card-image">
-                    <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSIGqoti-0XVUTEtY1sRBUht2BoQD4cbBPRTQ&usqp=CAU" alt=""></a>
+                    <a href="{{ post.1 }}"><img src="{{ post.3 }}" alt=""></a>
                 </div>
                 <div class="card-content">
-                    <p>TEST</p>
+                    <p>{{ post.0 }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="#">View listing: Price TEST PRICE</a>
+                    <a href="{{ post.1 }}">View listing: Price {{ post.2 }}</a>
                 </div>
             </div>
         </div>
-
-        <div class="col s4">
-            <div class="card small">
-                <div class="card-image">
-                    <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSIGqoti-0XVUTEtY1sRBUht2BoQD4cbBPRTQ&usqp=CAU" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>TEST</p>
-                </div>
-                <div class="card-action">
-                    <a href="#">View listing: Price TEST PRICE</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s4">
-            <div class="card small">
-                <div class="card-image">
-                    <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSIGqoti-0XVUTEtY1sRBUht2BoQD4cbBPRTQ&usqp=CAU" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>TEST</p>
-                </div>
-                <div class="card-action">
-                    <a href="#">View listing: Price TEST PRICE</a>
-                </div>
-            </div>
-        </div>
+    {% endfor %}
     </div>
+
 {% endblock content %}
